@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Conta</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="conteiner">
+        <div class="content">
+            <h1>Registrar-se</h1>
+            <input type="email" placeholder="E-mail:" class="caixatexto" id="regemail">
+            <input type="password" placeholder="Senha:" class="caixatexto" id="regsenha">
+            
+            <script>
+                function registrar() {
+                    window.localStorage.setItem('regemail', document.getElementById('regemail').value);
+                    window.localStorage.setItem('regsenha', document.getElementById('regsenha').value);
+                    window.location.replace("login.html");
+                    window.addEventListener('beforeunload', salvar);
+                }
+            </script>
+
+            
+            <p>
+                <div class="botao"><button onclick="registrar()">Confirmar</button></div>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

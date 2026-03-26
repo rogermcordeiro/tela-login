@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar na Conta</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="conteiner">
+        <div class="content">
+            <h1>Entrar</h1>
+            <input type="email" placeholder="E-mail:" class="caixatexto" id="email">
+            <input type="password" placeholder="Senha:" class="caixatexto" id="senha">
+            <script>
+                function logar(){
+                    const emaillocal = document.getElementById('email').value;
+                    const emailsalvo = window.localStorage.getItem('regemail');
+                    const senhalocal = document.getElementById('senha').value;
+                    const senhasalva = window.localStorage.getItem('regsenha');
+                    
+
+                    if (emaillocal === emailsalvo && senhalocal === senhasalva){
+                        window.location.replace("macaco.html");
+                    } else {
+                        alert("login incorreto ou não cadastrado")
+                    }
+                }
+            </script>
+            <p>
+                <div class="botao"><button type="submit" onclick="logar()">Confirmar</button></div>
+                Não tem uma conta ainda?
+                <br>
+                <a href="register.html">Criar conta</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
